@@ -1,0 +1,12 @@
+Young GC
+
+[GC (Allocation Failure) [PSYoungGen: 82004K->384K(92160K)] 184303K->102715K(194560K), 0.0035647 secs] [Times: user=0.00 sys=0.00, real=0.00 secs]
+
+Full GC
+
+[Full GC (Ergonomics) [PSYoungGen: 384K->0K(92160K)] [ParOldGen: 102331K->5368K(102400K)] 102715K->5368K(194560K), [Metaspace: 16941K->16914K(1064960K)], 0.0213953 secs] [Times: user=0.02 sys=0.00, real=0.02 secs]
+
+总结：
+1.堆内存越大，GC发生次数越少，程序执行效率更高
+2.堆内存越小，GC执行效率都不高，都有可能会发生内存溢出
+3.执行效率来说，G1>并行GC>CMS GC>串行GC。串行GC适合单核cpu场景，并行GC适合高吞吐场景，CMS、G1适合低延迟场景
